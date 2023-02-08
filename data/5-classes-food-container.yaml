@@ -1,0 +1,26 @@
+# Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
+path: ./data/5-classes-food-container
+train: 2023_train.txt
+val: 2023_val.txt
+
+
+# Classes
+nc: 5 # number of classes
+names: ["box", "cup", "bowl", "plate", "independent"] # class names
+
+# Download script/URL (optional)
+download: https://nutrition-bucket.rplushealth.cn/datasets/5_types_of_containers/5-classes-food-container-yolo-format.zip
+
+
+# https://github.com/ultralytics/yolov3/wiki/Train-Custom-Data
+
+# conda install pytorch==1.12.1 torchvision==0.13.1 torchaudio==0.12.1 cudatoolkit=11.3 -c pytorch -y
+
+# python -c "import torch;print('Torch版本: ' + torch.__version__);print('CUDA 是否可用: ' + str(torch.cuda.is_available()))"
+
+# pip install -r requirements.txt -i https://mirror.baidu.com/pypi/simple
+
+# python train.py --img 640 --batch 8 --epochs 50 --data 5-classes-food-container.yaml --weights weights/yolov3.pt --name 5-classes-food-container-yolov3-50epoch > /tmp/5-classes-food-container-yolov3-training.log 2>&1 &
+
+# python export.py --weights runs/train/5-classes-food-container-yolov3-50epoch/weights/best.pt --include torchscript onnx tfjs --simplify
+
