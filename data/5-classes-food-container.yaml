@@ -21,6 +21,7 @@ download: https://nutrition-bucket.rplushealth.cn/datasets/5_types_of_containers
 # pip install -r requirements.txt -i https://mirror.baidu.com/pypi/simple
 
 # python train.py --img 640 --batch 8 --epochs 50 --data 5-classes-food-container.yaml --weights weights/yolov3.pt --name 5-classes-food-container-yolov3-50epoch > /tmp/5-classes-food-container-yolov3-training.log 2>&1 &
+# python train.py --img 640 --batch 8 --epochs 50 --data 5-classes-food-container.yaml --weights weights/yolov3-tiny.pt --name 5-classes-food-container-yolov3-50epoch > /tmp/5-classes-food-container-yolov3-training.log 2>&1 &
 
 # python export.py --data data/5-classes-food-container.yaml --weights runs/train/5-classes-food-container-yolov3-50epoch/weights/best.pt --include torchscript onnx tfjs --simplify
 
